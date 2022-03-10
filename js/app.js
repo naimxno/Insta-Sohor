@@ -24,6 +24,7 @@ const reportPost = (id) => {
   reportedPostsId.push(id);
   const remainingPosts = posts.filter((post) => !reportedPostsId.includes(post.id));
   showPosts(remainingPosts);
+  // console.log(getReportedPosts());
 };
 
 const displayContent = (text) => {
@@ -52,7 +53,7 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
   const image = post.image;
-  console.log(post);
+  // console.log(post);
   const div = document.createElement("article");
   div.classList.add("post");
   div.innerHTML = `
@@ -152,7 +153,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
